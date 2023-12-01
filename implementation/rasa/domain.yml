@@ -1,0 +1,168 @@
+version: '3.1'
+intents:
+- start
+- affirm
+- deny
+- goodbye
+- greet
+#- say_name
+- ask_about_capabilities
+# Complaint Intents
+# - noise_complaint
+# - infrastructure_complaint
+- pollution_complaint:
+    use_entities:
+      - street
+      # - point_of_interest
+      - number 
+# - public_transport_complaint
+- general_complaint
+- other_complaint
+# Locations
+- provide_location
+- provide_street_name
+- provide_street_name_and_number
+- provide_number
+# Categories
+# - noise_category
+# - pollution_category
+# - other_category
+# - public_transport_category
+# - infrastructure_category
+# Reasons
+# - reason_construction_works
+# - reason_public_event
+# - reason_infrastructure
+# Others
+entities:
+# - PER
+- street
+#- point_of_interest
+- number
+- street_lights:
+    roles:
+    - reason
+- traffic_lights:
+    roles:
+    - reason
+- pothole:
+    roles:
+    - reason
+- event:
+    roles:
+    - reason
+- construction_works:
+    roles:
+    - reason
+- traffic:
+    roles:
+    - reason
+# - real_number:
+#     roles:
+#     - lat
+#     - lon
+slots:
+  street:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: street
+  # point_of_interest:
+  #   type: text
+  #   mappings:
+  #   - type: from_entity
+  #     entity: point_of_interest
+  number:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: number
+  # coords_lat:
+  #   type: float
+  #   influence_conversation: false
+  #   mappings:
+  #   - type: from_entity
+  #     entity: real_number
+  #     role: lat
+  # coords_lon:
+  #   type: float
+  #   influence_conversation: false
+    # mappings:
+    # - type: from_entity
+    #   entity: real_number
+    #   role: lon
+  # reason:
+  #   type: any
+  #   influence_conversation: false
+  #   mappings:
+  #   - type: from_entity
+  #     entity: construction_works
+  #     role: reason
+  #   - type: from_entity
+  #     entity: event
+  #     role: reason
+  #   - type: from_entity
+  #     entity: traffic
+  #     role: reason
+  #   - type: from_entity
+  #     entity: street_lights
+  #     role: reason
+  #   - type: from_entity
+  #     entity: traffic_lights
+  #     role: reason
+  #   - type: from_entity
+  #     entity: pothole
+  #     role: reason
+responses:
+  utter_welcome:
+  - text: Hallo, ich bin der Bürger Beschwerde Assistent der Gemeinde Wadgassen. Meine Aufgabe ist es, Bürger beim Melden von Problemen zu unterstützen. Lassen Sie mich Ihnen zunächst danken, da jede Beschwerde uns hilft Feedback zu sammeln und Probleme zu erkennen und zu lösen. Bitte beschreiben Sie worüber Sie sich beschweren möchten.
+  utter_user_greeted_back:
+  - text: Worüber möchten Sie sich beschweren?
+  utter_offer_additional_guideance:
+  - text: Alles klar, sollen wir die Informationen, die ich benötige, Schritt für Schritt durchgehen?
+  utter_user_does_not_want_to_report_a_complaint:
+  - text: Meine Hauptfunktion ist es Bürger dabei zu unterstützen Beschwerden zu äußern. Möglicherweise kann ich ihnen aber dennoch helfen oder ich werde es an meine menschlichen Kollegen weiterleiten. Was ist ihr Anliegen?
+  utter_ask_for_category:
+  - text: Können Sie Ihre Beschwerde in eine Kategorie einordnen?
+  utter_verify_noise_category_and_ask_for_location:
+  - text: Die Kategorie ist also Lärm. Wo haben Sie den Lärm wahrgenommen bzw. wo kam er her?
+  utter_verify_pollution_category_and_ask_for_location:
+  - text: Die Kategorie ist also Müll/Verschmutzung. Können Sie mir den Ort sagen?
+  utter_ask_for_location:
+  - text: Können sie mir den Ort des Problems bzw. wo Sie es wahrgenommen haben, sagen?
+  utter_verify_noise_from_street_location:
+  - text: Der Lärm kam also aus der {street}.
+  utter_verify_pollution_in_street_location:
+  - text: Die Verschmutzung ist als in der {street}.
+  utter_verify_pollution_in_location:
+  - text: Die Verschmutzung ist als in der {location}.
+  utter_ask_for_noise_reason:
+  - text: Wissen Sie was für den Lärm verantwortlich ist?
+  utter_ask_for_pollution_reason:
+  - text: Wissen Sie was für die Verschmutzung verantwortlich ist?
+  utter_ask_for_infrastructure_reason:
+  - text: Mir ist leider nicht ganz klar was genau das Infrastrukturproblem ist. Könnten Sie es genauer beschreiben?
+  utter_ask_for_more_details:
+  - text: Möchten Sie noch weitere Informationen oder Details mitteilen?
+  utter_inform_reason_construction_works:
+  - text: Okay, eine Baustelle ist also der Grund.
+  utter_inform_reason_public_event:
+  - text: Eine öffentliche Veranstaltung ist also der Grund.
+  utter_ask_for_complaint:
+  - text: Worüber möchten Sie sich beschweren?
+  utter_ask_for_number:
+  - text: Wissen Sie, was die nächstgelegene Hausnummer ist?
+  utter_goodbye:
+  - text: Tschüss
+  utter_default:
+  - text: Das habe ich leider nicht verstanden. Könnten Sie es anders formulieren?
+  utter_ask_rephrase:
+  - text: Könnten Sie das bitte anders formulieren?
+  utter_capabilities:
+  - text: Ich kann Ihnen bei Beschwerden helfen, indem ich Sie durch den Prozess führe. Wollen wir anfangen? Bitte beschreiben Sie worüber Sie sich beschweren möchten.
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: false
+actions:
+- action_default_fallback
+- action_get_feedback

@@ -1,0 +1,232 @@
+version: "3.1"
+nlu:
+- intent: start
+  examples: |
+    - start
+    - START
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - hallo
+    - Grüße
+    - Guten Tag
+    - Guten Morgen
+    - Wie geht's?
+- intent: goodbye
+  examples: |
+    - Tschüss
+    - Bye
+    - Aufwiedersehen
+- intent: affirm
+  examples: |
+    - yes
+    - ja
+    - y
+    - das stimmt
+    - natürlich
+    - das hört sich gut an
+    - korrekt
+    - ja bitte
+    - bitte mach das
+    - bitte
+    - ja habe ich
+    - ja möchte ich
+    - das möchte ich
+- intent: deny
+  examples: |
+    - no
+    - nein
+    - nope
+    - n
+    - niemals
+    - ich denke nicht
+    - ich mag das nicht
+    - nicht wirklich
+    - keine Ahnung
+    - nein danke
+    - das möchte ich nicht
+- intent: back
+  examples: |
+    - zurück
+    - ich möchte zurück
+    - Können wir einen Schritt zurück gehen?
+- intent: help
+  examples: |
+    - Hilfe
+    - Ich brauche Hilfe
+- intent: noise_complaint
+  examples: |
+    - Die [Baustelle]{"entity": "construction_works", "role": "reason"} vor meinem Haus in der [Marktstraße](street) [2](number) ist den ganzen Tag ziemlich laut.
+    - Der [Verkehr]{"entity":"traffic", "role":"reason"} in der [Hauptstraße](street) ist momentan echt laut.
+    - Wegen dem vielen [Verkehrsaufkommen]{"entity":"traffic", "role":"reason"} ist es in der [Teststraße](street) echt laut momentan.
+    - Ich möchte mich wegen der Lautstärke der [Baustelle]{"entity": "construction_works", "role": "reason"} in der [Adenauerstraße](street) beschweren.
+    - In der [Hauptstraße](street) ist es echt laut in letzter Zeit.
+    - Es ist momentan sehr Laut in der [Adenauerstraße](street).
+    - Es ist in der Nähe der [Hauptstraße](street) [24](number) sehr laut.
+    - In der [Beispielstraße](street) [96](number) ist es sehr laut.
+    - Lärmbelästigung in der [Hauptstraße](street) [24](number).
+    - Ich möchte mich über den Lärm in der [Hauptstraße](street) beschweren.
+    - Wegen der [Baustelle]{"entity": "construction_works", "role": "reason"} in der [Hauptstraße](street) ist es momentan sehr laut.
+    - Wegen den [Bauarbeiten]{"entity": "construction_works", "role": "reason"} in der [Hauptstraße](street) ist es momentan sehr laut.
+    - Es ist hier sehr laut wegen [Bauarbeiten]{"entity": "construction_works", "role": "reason"} in der [Hauptstraße](street).
+    - [Bauarbeiten]{"entity": "construction_works", "role": "reason"} [Hauptstraße](street) Lärm
+    - in der [Hauptstraße](street) nahe der Hausnummer [50](number) ist es sehr laut.
+    - Ich möchte mich über Lärmbelästigung in der Nähe der [Hauptstraße](street) [24](number) beschweren.
+    - Es ist sehr laut in der [Marktstraße](street) wegen einer [öffentlichen Veranstaltung]{"entity": "event", "role": "reason"}
+    - Wegen einer [Veranstaltung]{"entity": "event", "role": "reason"} ist es sehr laut in der [Marktstraße](street).
+    - Lärm in der [Marktstraße](street) [42](number)
+    - Lärm wegen einer [Baustelle]{"entity": "construction_works", "role": "reason"}
+    - Lärmbelästigung durch eine [Baustelle]{"entity": "construction_works", "role": "reason"}
+    - Ich habe eine Beschwerde wegen Lärmbelästigung.
+    - Ich möchte mich wegen Lärm in der Nähe der [Marktstr](street) beschweren.
+    - Lärm in der [Hauptstr](street)
+- intent: infrastructure_complaint
+  examples: |
+    - Eine [Straßenlaterne]{"entity": "street_lights", "role": "reason"} in der [Hauptstraße](street) ist defekt.
+    - Ich möchte mich wegen einer defekten [Straßenlampe]{"entity": "street_lights", "role": "reason"} beschweren.
+    - Die [Straßenbeleuchtung]{"entity": "street_lights", "role": "reason"} in der [Johannesstraße](street) funktioniert nicht richtig.
+    - Eine [Ampel]{"entity": "traffic_lights", "role": "reason"} an der Kreuzung vom [Ahornweg](street) und er [Hauptstraße](street) ist ausgefallen.
+    - Die [Verkehrsampel]{"entity": "traffic_lights", "role": "reason"} zwischen der [Rathausstraße](street) und der [Marktstraße](street) funktioniert nicht mehr.
+    - Die [Straßenlaterne]{"entity": "street_lights", "role": "reason"} an der [Marktstraße](street) [15](number) flackert und funktioniert nicht mehr.
+    - Es gibt viele [Schlaglöcher]{"entity":"pothole", "role": "reason"} in der [Marktstr](street).
+    - [Schlagloch]{"entity":"pothole", "role": "reason"} in der [Seitenstr](street)
+    - Es gibt an [Schlagloch]{"entity":"pothole", "role": "reason"} in der nähe des [Hahnenweges](street) Nummer [4](number).
+    - Ich möchte eine Beschwerde wegen defekter Infrastructur einreichen.
+    - eine defekte [Straßenlaterne]{"entity": "street_lights", "role": "reason"} in der Nähe der [Hauptstraße](street) [24](number).
+    - defekte [Straßenbeleuchtung]{"entity": "street_lights", "role": "reason"} [Hauptstraße](street) [24](number)
+    - defekte [Straßenbeleuchtung]{"entity": "street_lights", "role": "reason"} in der [Hauptstraße](street) nahe der Hausnummer [24](number).
+    - eine defekte [Straßenlaterne]{"entity": "street_lights", "role": "reason"}
+    - defekte [Straßenbeleuchtung]{"entity": "street_lights", "role": "reason"}
+- intent: pollution_complaint
+  examples: |
+    - Im [Ahornweg](street) liegt viel Müll neben der Straße.
+    - Müll in der [Mainzerstr](street)
+    - Dreck in der [Hauptstraße](street)
+    - Müll in der nähe der [Hauptstraße](street) Nummer [42](number)
+    - Müll in der [Marktstraße](street) [42](number)
+    - ich möchte mich wegen Müll beschweren.
+    - ich habe eine Beschwerde wegen Müll.
+    - es geht um Müll
+    - Verschmutzung
+    - Ich denke Verschmutzung
+    - Müll in der Nähe der [Mainzerstr](street)
+    - Ich denke Müll
+    - Vielleicht Müll?
+    - Verunreinigung
+    - illegale Müllentsorgung
+    - Müllansammlung
+    - große Müllansammlung
+    - Dreck
+    - Hallo, ich möchte eine Beschwerde wegen einer unzumutbaren Ansammlung von Müll in der Nähe der Nebenstraße Nummer 10 einreichen. Es ist wirklich frustrierend, den Anblick von Müllsäcken, Plastikflaschen und sogar zerbrochenen Möbelstücken in dieser Gegend zu ertragen. Abgesehen davon, dass es ästhetisch unangenehm ist, stellt dies auch eine potenzielle Gefahr für die Gesundheit und die Umwelt dar. Ich wäre Ihnen dankbar, wenn die Gemeinde schnellstmöglich Schritte unternimmt, um dieses Problem anzugehen. Ihre Unterstützung bei der Bearbeitung dieser Beschwerde wird sehr geschätzt.
+    - Hallo, ich möchte mich über die unhygienische Ansammlung von Müll in der Nähe der Hauptstraße Nummer 10 beschweren. Es ist äußerst enttäuschend zu sehen, wie sich dort Müllsäcke, Plastikflaschen und sogar beschädigte Möbelstücke angesammelt haben. Dieser Anblick ist nicht nur abstoßend, sondern auch eine potenzielle Quelle von Krankheiten und Umweltproblemen. Ich hoffe aufrichtig, dass die Gemeinde rasch handelt, um diese Situation zu bereinigen. Ihre Unterstützung bei der Bearbeitung dieser Beschwerde wird hoch geschätzt.
+    - Guten Tag, ich möchte eine Beschwerde über die unhaltbare Müllansammlung in der Nähe der Hauptstraße Nummer 10 einreichen. Es ist wirklich bedauerlich, dass dieser Bereich von Müllsäcken, Plastikflaschen und sogar zerbrochenem Mobiliar übersät ist. Diese unschöne Situation ist nicht nur ein Ärgernis, sondern auch eine potenzielle Bedrohung für die Gesundheit und die Umwelt. Ich bitte inständig die Gemeinde, umgehend Maßnahmen zu ergreifen, um diesen Missstand zu beseitigen. Vielen Dank im Voraus für Ihre Hilfe bei der Bearbeitung meiner Beschwerde.
+    - Hallo, ich möchte eine Beschwerde über die unzumutbare Müllansammlung in der Nähe der Beispielstraße Nummer 10 einreichen. Es ist wirklich schockierend zu sehen, wie dieser Bereich mit Müllsäcken, Plastikflaschen und sogar beschädigten Möbelstücken übersät ist. Dieser unordentliche Zustand wirkt sich nicht nur negativ auf das Stadtbild aus, sondern stellt auch eine ernsthafte Bedrohung für die Gesundheit und die Umwelt dar. Ich bitte dringend darum, dass die Gemeinde unverzüglich handelt und die erforderlichen Schritte unternimmt, um diesen Müll zu beseitigen. Ich danke Ihnen im Voraus für Ihre Bemühungen bei der Bearbeitung meiner Beschwerde.
+    - Bitte kümmern Sie sich um die Müllansammlung bei Nebenstraße 42.
+    - Müllproblem in der Nähe des Rathauses.
+    - Ich möchte mich wegen einem übervollen Papiercontainer in der [Mainzerstr](street) beschweren. Es liegt auch anderer Müll neben den Containern.
+    - übervoller Müllcontainer
+    - Altkleidercontainer
+    - Recyclingcontainer
+    - Müllcontainer in der [Teststraße](street)
+    - voller Müllcontainer
+    - übervoller Müllcontainer
+    - überquillender Müllcontainer
+    - übervolle öffentliche Mülltonne
+    - ich möchte mich wegen einer nicht geleerten Mülltonne in der [Mainzerstr](street) [42](number) beschweren.
+    - Ansammlung von Müllsäcken im Wald am [Brunnen](street)
+    - Ich möchte mich über eine große Ansammlung von Sperrmüll bei den Recyclingcontainern [Milchborn](street) beschweren.
+    - Müllsäcke am [Quell](street)
+    - Ich möchte mich über eine große Ansammlung von Sperrmüll bei den Recyclingcontainern in der [Ahornstraße](street) beschweren.
+    - Sperrmüll in der [Mühlenstraße](street)
+    - Sperrmüll an den Recyclingcontainern in der [Ahornstraße](street)
+    - Ich möchte mich über eine große Ansammlung von Sperrmüll bei den Recyclingcontainern in der [Johannestr] beschweren
+    - Ich möchte mich über eine große Ansammlung von Sperrmüll bei den Recyclingcontainern in der [Erlenstraße](street) beschweren.
+    - Ich möchte mich über eine große Ansammlung von Sperrmüll bei den Recyclingcontainern in der [Kastanienstraße](street) beschweren.
+    - Müllsäcke in der [Lindenstraße](street)
+    - Ich möchte mich über eine große Ansammlung von Sperrmüll bei den Recyclingcontainern in der [Mühlenstraße](street) beschweren.
+    - Ich moöchte mich über eine große Ansammlung von Sperrmüll im Wald in der Nähe der Straße am [Butterborn](street) beschweren.
+- intent: general_complaint
+  examples: |
+    - ich möchte mich beschweren
+    - ich habe eine Beschwerde
+    - Beschwerde
+    - ich möchte mich über etwas beschweren
+    - Ich möchte ein Problem melden
+    - Beschwerde einreichen
+    - Problem melden
+- intent: other_complaint
+  examples: |
+    - ich bin mit den politischen Entscheidungen der Gemeinde nicht einverstanden.
+    - es gibt viel zu wenig Bürgebeteilungsmöglichkeiten
+    - keine Bürgerbeteiligung
+    - ich würde mir wünschen, dass die Gemeinde mehr unternimmt um Klimaneutral zu werden
+    - ich habe Angst, dass ich zu viele Einschnitte erdulden muss.
+- intent: other_category
+  examples: |
+    - Andere
+    - Other
+    - Verschiedenes
+    - Anderes
+    - Nicht definiert
+    - Keine Kategory
+    - Keine Ahnung
+- intent: provide_street_name
+  examples: |
+    - in der [Hauptstraße](street)
+    - in der Straße [Adenauerstraße](street)
+    - [Johannesstraße](street)
+    - [Marktstr](street)
+    - in der Straße [Adenauerstr](street)
+    - [Beispielstr](street)
+    - [Marktweg](street)
+    - im [Johannesweg](street)
+    - [Teststraße](street)
+    - [Beispielstraße](street)
+    - im [Sonnenweg](street)
+    - [Buchenweg](street)
+    - [Mozartstraße](street)
+    - [Kastanienstraße](street)
+    - [Friedrichstraße](street)
+    - in der [Erlenstraße](street)
+    - [Mozartstr](street)
+    - [Beispielstr](street)
+    - [Mühlenstraße](street)
+    - [Buchenstr](street)
+    - in der Straße am [Buchenweg](street)
+    - am [Born](street)
+    - [Mühlenweg](street)
+    - [Lindenstraße](street)
+    - [Mühlenstr](street)
+    - [Mühlenweg](street)
+    - [Mühlenstr](street)
+    - [Ahornstraße](street)
+    - [Buchenstraße](street)
+    - [Buchenstr](street)
+    - in der Straße am [Buchenweg](street)
+    - am [Erlenweg](street)
+    - am [Ahornweg](street)
+- intent: provide_street_name_and_number
+  examples: |
+    - [Hauptstraße](street) [42](number)
+    - [Adenauerstraße](street) [42](number)
+    - [Johannesstraße](street) Nummer [4](number)
+    - [Hauptstraße](street) Nummer [21](number)
+    - der Ort ist die [Johannesstraße](street) Nummer [4](number)
+    - in der Nähe der [Adenauerstraße](street) [2](number)
+    - nahe der [Adenauerstraße](street) [2](number)
+    - in der Nähe der [Hauptstraße](street) [42](number)
+    - nahe der [Johannesstraße](street) Nummer [4](number)
+    - in der Straße [Adenauerstraße](street) [42](number)
+
+- intent: ask_about_capabilities
+  examples: |
+    - Was kannst du?
+    - Was kannst du so?
+    - Was kannst du alles?
+    - Was kannst du mir sagen?
+    - Was kannst du mir erzähle
+    - Was kannst du mir erzählen?
+    - Über welche Funktionen verfügst du?

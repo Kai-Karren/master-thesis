@@ -1,0 +1,67 @@
+version: "3.1"
+
+stories:
+
+- story: User does not want to report a complaint
+  steps:
+  - intent: deny
+  - action: utter_user_does_not_want_to_report_a_complaint
+
+- story: User does not want to report a complaint
+  steps:
+  - intent: start
+  - action: utter_welcome
+  - intent: deny
+  - action: utter_user_does_not_want_to_report_a_complaint
+
+- story: User first asks about the capabilities of the system
+  steps:
+  - intent: ask_about_capabilities
+  - action: utter_capabilities
+  - intent: pollution_complaint
+    entities:
+    - street: Hauptstraße
+  - slot_was_set:
+    - street: Hauptstraße
+  - action: action_get_feedback
+
+- story: User asks about the capabilities of the system
+  steps:
+  - intent: start
+  - action: utter_welcome
+  - intent: ask_about_capabilities
+  - action: utter_capabilities
+  - intent: pollution_complaint
+    entities:
+    - street: Hauptstraße
+  - slot_was_set:
+    - street: Hauptstraße
+  - action: action_get_feedback
+
+- story: User asks about the capabilities of the system with location in separate turn
+  steps:
+  - intent: ask_about_capabilities
+  - action: utter_capabilities
+  - intent: pollution_complaint
+  - action: utter_ask_for_location
+  - intent: provide_street_name
+    entities:
+    - street: Hauptstraße
+  - slot_was_set:
+    - street: Hauptstraße
+  - action: action_get_feedback
+
+- story: User asks about the capabilities of the system with location in separate turn
+  steps:
+  - intent: start
+  - action: utter_welcome
+  - intent: ask_about_capabilities
+  - action: utter_capabilities
+  - intent: pollution_complaint
+  - action: utter_ask_for_location
+  - intent: provide_street_name
+    entities:
+    - street: Hauptstraße
+  - slot_was_set:
+    - street: Hauptstraße
+  - action: action_get_feedback

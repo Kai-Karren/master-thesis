@@ -1,0 +1,14 @@
+{
+    "utter_test_fallback": "This is a test fallback.",
+    "utter_test_fallback_2": "This is a test fallback 2.",
+    "initial_fallback": "Leider habe ich das nicht verstanden. Beschreiben Sie mir bitte das Problem über das Sie sich beschweren möchten.",
+    "initial_fallback_2": "Es tut mir leid, darauf weiß ich keine Antwort. Lassen Sie uns strukturierter an die Sache herangehen. In welche Kategorie würden sie das Problem bzw. ihre Beschwerde einordnen?",
+    "utter_welcome_fallback": "Leider habe ich das nicht verstanden. Beschreiben Sie mir bitte das Problem über das Sie sich beschweren möchten.",
+    "utter_welcome_fallback_2": "Es tut mir leid, darauf weiß ich keine Antwort. Lassen Sie uns strukturierter an die Sache herangehen. In welche Kategorie würden sie das Problem bzw. ihre Beschwerde einordnen?",
+    "utter_capabilities_fallback": "Leider habe ich das nicht verstanden. Beschreiben Sie mir bitte das Problem über das Sie sich beschweren möchten.",
+    "utter_capabilities_fallback_2": "Es tut mir leid, darauf weiß ich keine Antwort. Lassen Sie uns strukturierter an die Sache herangehen. In welche Kategorie würden sie das Problem bzw. ihre Beschwerde einordnen?",
+    "utter_ask_for_location_fallback": "Das könnte ich leider nicht verstehen. Ich wollte wissen, wo sich das Problem befindet bzw. wo Sie es wahrgenommen haben.",
+    "utter_ask_for_location_fallback_2": "Entschuldigung könnten Sie das anders formulieren. Eine Ortsangabe wäre z. B. eine Straße mit einer Hausnummer oder eine Beschreibung wie nahe dem Rathaus. Ich hoffe, das hilft weiter.",
+    "utter_ask_for_complaint_fallback": "Das habe ich leider nicht verstanden. Ich möchte gerne wissen, was genau das Problem ist. Könnten Sie das anders formulieren?",
+    "utter_ask_for_complaint_fallback_2": "Es tut mir leid, das habe ich leider nicht verstanden. Lassen Sie uns strukturierter an die Sache herangehen. In welche Kategorie würden sie das Problem bzw. ihre Beschwerde einordnen?"
+}

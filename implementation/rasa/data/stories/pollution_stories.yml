@@ -1,0 +1,158 @@
+version: "3.1"
+
+stories:
+
+- story: User wants to report a complaint with general complaint first no start
+  steps:
+  - intent: general_complaint
+  - action: utter_ask_for_complaint
+  - intent: pollution_complaint
+  - action: utter_ask_for_location
+  - intent: provide_street_name
+    entities:
+    - street: Hauptstraße
+  - slot_was_set:
+    - street: Hauptstraße
+  - action: action_get_feedback
+
+- story: User wants to report a complaint with general complaint first and location in own turn
+  steps:
+  - intent: start
+  - action: utter_welcome
+  - intent: general_complaint
+  - action: utter_ask_for_complaint
+  - intent: pollution_complaint
+  - action: utter_ask_for_location
+  - intent: provide_street_name
+    entities:
+    - street: Hauptstraße
+  - slot_was_set:
+    - street: Hauptstraße
+  - action: action_get_feedback
+
+- story: User wants to report a complaint with general complaint first
+  steps:
+  - intent: general_complaint
+  - action: utter_ask_for_complaint
+  - intent: pollution_complaint
+    entities:
+    - street: Hauptstraße
+  - slot_was_set:
+    - street: Hauptstraße
+  - action: action_get_feedback
+
+- story: User wants to report a complaint with general complaint first
+  steps:
+  - intent: start
+  - action: utter_welcome
+  - intent: general_complaint
+  - action: utter_ask_for_complaint
+  - intent: pollution_complaint
+    entities:
+    - street: Hauptstraße
+  - slot_was_set:
+    - street: Hauptstraße
+  - action: action_get_feedback
+
+- story: Register pollution complaint with street name
+  steps:
+  - intent: pollution_complaint
+    entities:
+    - street: Hauptstraße
+  - slot_was_set:
+    - street: Hauptstraße
+  - action: action_get_feedback
+
+- story: Register pollution complaint with street name
+  steps:
+  - intent: start
+  - action: utter_welcome
+  - intent: pollution_complaint
+    entities:
+    - street: Hauptstraße
+  - slot_was_set:
+    - street: Hauptstraße
+  - action: action_get_feedback
+
+- story: Register pollution complaint only with street name
+  steps:
+  - intent: affirm
+  - action: utter_ask_for_complaint
+  - intent: pollution_complaint
+    entities:
+    - street: Hauptstraße
+  - slot_was_set:
+    - street: Hauptstraße
+  - action: action_get_feedback
+
+- story: Register pollution complaint only with street name
+  steps:
+  - intent: start
+  - action: utter_welcome
+  - intent: affirm
+  - action: utter_ask_for_complaint
+  - intent: pollution_complaint
+    entities:
+    - street: Hauptstraße
+  - slot_was_set:
+    - street: Hauptstraße
+  - action: action_get_feedback
+
+- story: Register pollution complaint directly with street in own turn
+  steps:
+  - intent: pollution_complaint
+  - action: utter_ask_for_location
+  - intent: provide_street_name
+    entities:
+    - street: Hauptstraße
+  - slot_was_set:
+    - street: Hauptstraße
+  - action: action_get_feedback
+
+- story: Register pollution complaint directly with street in own turn
+  steps:
+  - intent: start
+  - action: utter_welcome
+  - intent: pollution_complaint
+  - action: utter_ask_for_location
+  - intent: provide_street_name
+    entities:
+    - street: Hauptstraße
+  - slot_was_set:
+    - street: Hauptstraße
+  - action: action_get_feedback
+
+- story: User says hello and reports a pollution complaint
+  steps:
+  - intent: greet
+  - action: utter_user_greeted_back
+  - intent: pollution_complaint
+    entities:
+    - street: Hauptstraße
+  - slot_was_set:
+    - street: Hauptstraße
+  - action: action_get_feedback
+
+- story: User reports pollution complaint in two steps with the location as a second pollution complaint intent
+  steps:
+  - intent: pollution_complaint
+  - action: utter_ask_for_location
+  - intent: pollution_complaint
+    entities:
+    - street: Hauptstraße
+  - slot_was_set:
+    - street: Hauptstraße
+  - action: action_get_feedback
+
+- story: User reports says hello and reports a pollution complaint in two steps with the location as a second pollution complaint intent
+  steps:
+  - intent: greet
+  - action: utter_user_greeted_back
+  - intent: pollution_complaint
+  - action: utter_ask_for_location
+  - intent: pollution_complaint
+    entities:
+    - street: Hauptstraße
+  - slot_was_set:
+    - street: Hauptstraße
+  - action: action_get_feedback
