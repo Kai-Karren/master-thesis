@@ -1,0 +1,1 @@
+docker run --name cui-gateway -p 3011:3011 -d cui-gateway
