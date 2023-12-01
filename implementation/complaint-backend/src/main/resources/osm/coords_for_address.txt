@@ -1,0 +1,6 @@
+[out:json][timeout:25];
+// Replace "Street Name" and "House Number" with the street name and house number of the address you are searching for
+way["addr:street"="%s"]["addr:housenumber"="%s"]["addr:city"="%s"]["addr:country"="DE"];
+out body;
+>;
+out skel qt;

@@ -1,0 +1,9 @@
+FROM arm64v8/eclipse-temurin:17
+#RUN addgroup -S spring && adduser -S spring -G spring
+#USER spring:spring
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} app.jar
+COPY root.crt /root/.postgresql/root.crt
+ENV JDBC_MOCKED_DB_URL=
+ENV JDBC_COMPLAINTS_DB_URL=sword=
+ENTRYPOINT ["java","-jar","/app.jar"]

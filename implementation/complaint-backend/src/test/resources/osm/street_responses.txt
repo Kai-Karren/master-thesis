@@ -1,0 +1,212 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.59 e21c39fe",
+  "osm3s": {
+    "timestamp_osm_base": "2023-02-22T20:08:09Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "way",
+  "id": 38433769,
+  "nodes": [
+    263686208,
+    8362623322,
+    8362623321,
+    8362623319,
+    8362623320,
+    279570327
+  ],
+  "tags": {
+    "cycleway:both": "no",
+    "highway": "tertiary",
+    "lane_markings": "no",
+    "lit": "yes",
+    "maxspeed": "30",
+    "name": "Adenauerstraße",
+    "priority_road": "designated",
+    "ref": "L 237",
+    "surface": "asphalt",
+    "zone:traffic": "DE:urban"
+  }
+},
+{
+  "type": "way",
+  "id": 38433770,
+  "nodes": [
+    279562024,
+    263686206,
+    8362623323,
+    263686207,
+    263686208
+  ],
+  "tags": {
+    "cycleway:both": "no",
+    "highway": "tertiary",
+    "lane_markings": "no",
+    "lit": "yes",
+    "maxspeed": "30",
+    "name": "Adenauerstraße",
+    "priority_road": "designated",
+    "ref": "L 237",
+    "surface": "asphalt",
+    "zone:traffic": "DE:urban"
+  }
+},
+{
+  "type": "way",
+  "id": 38433771,
+  "nodes": [
+    279562002,
+    335764119,
+    8362703221,
+    1250989023,
+    8362703222,
+    1250989011,
+    1250988992,
+    8362703223,
+    459500360,
+    459500362,
+    459500364,
+    263686208
+  ],
+  "tags": {
+    "hgv": "destination",
+    "highway": "residential",
+    "lit": "yes",
+    "maxspeed": "30",
+    "name": "Kapellenstraße",
+    "surface": "asphalt",
+    "zone:traffic": "DE:zone30"
+  }
+},
+{
+  "type": "node",
+  "id": 263686206,
+  "lat": 49.1969965,
+  "lon": 7.1429177
+},
+{
+  "type": "node",
+  "id": 263686207,
+  "lat": 49.1970534,
+  "lon": 7.1427776
+},
+{
+  "type": "node",
+  "id": 263686208,
+  "lat": 49.1970983,
+  "lon": 7.1427354
+},
+{
+  "type": "node",
+  "id": 279562002,
+  "lat": 49.1962901,
+  "lon": 7.1424356
+},
+{
+  "type": "node",
+  "id": 279562024,
+  "lat": 49.1969828,
+  "lon": 7.1429988
+},
+{
+  "type": "node",
+  "id": 279570327,
+  "lat": 49.1978708,
+  "lon": 7.1426542
+},
+{
+  "type": "node",
+  "id": 335764119,
+  "lat": 49.1963218,
+  "lon": 7.1423973
+},
+{
+  "type": "node",
+  "id": 459500360,
+  "lat": 49.1969114,
+  "lon": 7.1423082
+},
+{
+  "type": "node",
+  "id": 459500362,
+  "lat": 49.1969728,
+  "lon": 7.1424115
+},
+{
+  "type": "node",
+  "id": 459500364,
+  "lat": 49.1970569,
+  "lon": 7.1426019
+},
+{
+  "type": "node",
+  "id": 1250988992,
+  "lat": 49.1967651,
+  "lon": 7.1422167
+},
+{
+  "type": "node",
+  "id": 1250989011,
+  "lat": 49.1966529,
+  "lon": 7.1422076
+},
+{
+  "type": "node",
+  "id": 1250989023,
+  "lat": 49.1964776,
+  "lon": 7.1422693
+},
+{
+  "type": "node",
+  "id": 8362623319,
+  "lat": 49.1976765,
+  "lon": 7.1426830
+},
+{
+  "type": "node",
+  "id": 8362623320,
+  "lat": 49.1977979,
+  "lon": 7.1426743
+},
+{
+  "type": "node",
+  "id": 8362623321,
+  "lat": 49.1972283,
+  "lon": 7.1426998
+},
+{
+  "type": "node",
+  "id": 8362623322,
+  "lat": 49.1971472,
+  "lon": 7.1427152
+},
+{
+  "type": "node",
+  "id": 8362623323,
+  "lat": 49.1970232,
+  "lon": 7.1428353
+},
+{
+  "type": "node",
+  "id": 8362703221,
+  "lat": 49.1963935,
+  "lon": 7.1423310
+},
+{
+  "type": "node",
+  "id": 8362703222,
+  "lat": 49.1965662,
+  "lon": 7.1422224
+},
+{
+  "type": "node",
+  "id": 8362703223,
+  "lat": 49.1968396,
+  "lon": 7.1422411
+}
+
+  ]
+}

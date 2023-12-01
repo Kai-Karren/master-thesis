@@ -1,0 +1,50 @@
+{
+  "title": "Survey Draft",
+  "pages": [
+    {
+      "name": "page1",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "cuq-panel",
+          "elements": [
+            {
+              "type": "rating",
+              "name": "cuq_personality",
+              "title": "Die Persönlichkeit des Chatbots war realistisch und ansprechend.",
+              "minRateDescription": "Strongly Disagree",
+              "maxRateDescription": "Strongly Agree",
+              "displayMode": "buttons"
+            },
+            {
+              "type": "rating",
+              "name": "cuq_robotic",
+              "title": "Der Chatbot war zu roboterhaft.",
+              "minRateDescription": "Strongly Disagree",
+              "maxRateDescription": "Strongly Agree",
+              "displayMode": "buttons"
+            },
+            {
+              "type": "rating",
+              "name": "cuq_welcoming",
+              "title": "Der Chatbot war freundlich.",
+              "minRateDescription": "Strongly Disagree",
+              "maxRateDescription": "Strongly Agree",
+              "displayMode": "buttons"
+            },
+
+          ]
+        },
+
+      ]
+    }
+  ],
+  "showPrevButton": false,
+  "showQuestionNumbers": "off",
+  "completeText": {
+    "fr": "Envoyer"
+  },
+  "questionsOnPageMode": "questionPerPage",
+  "widthMode": "static",
+  "width": "1000px"
+}

@@ -1,0 +1,13 @@
+[out:json][timeout:25];
+
+// gather results
+(
+  // query part for: “highway=*”
+  node["highway"](around:%1$d,%2$f,%3$f);
+  way["highway"](around:%1$d,%2$f,%3$f);
+  relation["highway"](around:%1$d,%2$f,%3$f);
+);
+// print results
+out body;
+>;
+out skel qt;

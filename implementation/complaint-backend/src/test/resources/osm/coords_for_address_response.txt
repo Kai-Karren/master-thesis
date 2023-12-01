@@ -1,0 +1,53 @@
+{
+	"version": 0.6,
+	"generator": "Overpass API 0.7.59 e21c39fe",
+	"osm3s": {
+		"timestamp_osm_base": "2023-02-22T19:23:00Z",
+		"copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+	},
+	"elements": [
+		{
+			"type": "way",
+			"id": 163210823,
+			"nodes": [
+				1749604222,
+				1749604151,
+				1749604149,
+				1749604218,
+				1749604222
+			],
+			"tags": {
+				"addr:city": "Mandelbachtal",
+				"addr:country": "DE",
+				"addr:housenumber": "96",
+				"addr:postcode": "66399",
+				"addr:street": "Adenauerstraße",
+				"building": "yes"
+			}
+		},
+		{
+			"type": "node",
+			"id": 1749604149,
+			"lat": 49.1973203,
+			"lon": 7.1424319
+		},
+		{
+			"type": "node",
+			"id": 1749604151,
+			"lat": 49.1973234,
+			"lon": 7.1425808
+		},
+		{
+			"type": "node",
+			"id": 1749604218,
+			"lat": 49.1974657,
+			"lon": 7.1424248
+		},
+		{
+			"type": "node",
+			"id": 1749604222,
+			"lat": 49.1974688,
+			"lon": 7.1425737
+		}
+	]
+}
