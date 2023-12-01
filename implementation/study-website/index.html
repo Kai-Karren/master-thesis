@@ -1,0 +1,283 @@
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bürgerbeschwerde Assistent</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+</head>
+
+<body>
+
+  <main>
+    <div class="container col-xxl-8 px-4 py-5">
+      <div class="row align-items-center g-5 py-5">
+        <div class="col-lg-10">
+          <h1 class="display-5 fw-bold lh-1 mb-3">Willkommen</h1>
+          <p class="lead">
+            </br>
+            Vielen Dank für Ihr Interesse an der Studie.
+          </p>
+          <p>
+            Diese Studie findet im Rahmen der Medieninformatik Masterarbeit von Kai Karren
+            an der Universität des Saarlandes statt und wird ca. 15-20 Minuten dauern.
+
+            In der Studie geht es um die Unterstützung des Bürgerbeschwerdemanagements mithilfe eines Chatbots
+            und wird in Kooperation mit der <a id="wadgassen_link" class="link" rel="noopener noreferrer"
+              target="_blank" href="https://www.wadgassen.de/startseite/">Gemeinde Wadgassen</a> durchgeführt.
+
+          </p>
+          <p>Die Studie besteht aus zwei Teilen. Der Interaktion mit dem Prototyp eines "Bürgerbeschwerde Assistenten"
+            Chatbots, gefolgt von einem Fragebogen.</p>
+          <p>Die Datenschutzerklärung der Studie finden Sie hier <a id="datenschutzerklaerungs_link" class="link"
+              rel="noopener noreferrer" target="_blank" href="datenschutzerklaerung.html">Datenschutzerklärung</a>.
+          </p>
+          <p>Die Teilnahme an der Studie ist freiwillig und es steht Ihnen frei, Ihre Teilnahme jederzeit ohne Angabe
+            von Gründen abzubrechen.
+          </p>
+
+          <h2>Aufgabe</h2>
+
+          <p>Bitte lesen Sie sich die folgende Beschreibung und Instruktionen gut durch.</p>
+          <p>Versuchen Sie sich in folgende Situation hinein zu versetzen.</p>
+          <p id="instructions"></p>
+          <p>Das nochfolgende Bild dient als Beispiel, wie es aussehen könnte.</p>
+          <img id="scenario_image" width="50%" class="rounded">
+          <p>Sie möchten, dass dieses Problem von der Gemeinde gelöst wird und wollen schnell eine Beschwerde erstellen.
+          </p>
+          </br>
+          <p>Um Ihre Beschwerde einzureichen, klicken Sie nun bitte auf den blauen "Chat Widget" Button unten rechts.
+          <p>So wird das Chat Fenster geöffnet und Sie können mit den Chatbot interagieren.</p>
+          </p>
+          </br>
+          <h2>Fragebogen</h2>
+          <p>Sobald Sie die Interaktion mit dem Chatbot abgeschlossen haben, wird der Link
+            zum Fragebogen freigeschaltet.
+          </p>
+          <a id="questionnaire_button" role="button" class="btn btn-primary disabled" rel="noopener noreferrer"
+            target="_blank" onclick="attachData()" href="survey.html">Umfrage</a>
+          </br>
+          </br>
+          <p>Der Link wird sich in einem neuen Tab öffnen.</p>
+          </br>
+          </br>
+          <p>Sollten Sie Probleme oder Fragen haben, können Sie sich gerne an <a
+              href="mailto:s8kakarr@stud.uni-saarland.de">s8kakarr@stud.uni-saarland.de</a> wenden.</p>
+          <p id="image_source"></p>
+
+          </br>
+        </div>
+      </div>
+    </div>
+
+    <div class="b-example-divider mb-0"></div>
+
+    <div id="custom-chat-widget"></div>
+
+    <div class="container">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+          <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <svg class="bi" width="30" height="24">
+              <use xlink:href="#bootstrap" />
+            </svg>
+          </a>
+          <span class="mb-3 mb-md-0 text-muted">&copy; 2023 Kai Karren</span>
+        </div>
+      </footer>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+
+  <script src="./dist/787.9991c6b4.chunk.js"></script>
+  <script src="./dist/main.788ce2e7.js"></script>
+
+  <script>
+
+    const conditions = ["a", "b"];
+
+    // Array of texts
+    const texts = [
+      "Ihnen ist die illegale Abladung einer Menge Müll im Wald an der Straße “Am Butterborn” aufgefallen.",
+      "Ihnen ist aufgefallen, dass eine Menge Sperrmüll an den Recyclingcontainern in der Lindenstraße abgelegt wurde.",
+    ];
+
+    const images = [
+      "img/ecology-88153_1280.jpg",
+      "img/Screenshot 2023-06-26 224713.png",
+    ];
+
+    const altTextForImage = [
+      "Ein Bild das eine große Ansammlung von Müll in einem europäischen Wald zeigt. Unteranderem Plastikflaschen und Plastiktüten.",
+      "Ein Bild einer Sperrmüllansammlung neben den Müllcontainern. Unteranderem Teile eines Bürostuhls.",
+    ]
+
+    const imageSource = [
+      "Bei dem Beispielbild handelt es sich um ein lizenzfreies Bild von <a href=\"https://pixabay.com/de/photos/%C3%B6kologie-wald-m%C3%BCll-gr%C3%BCn-recycling-88153/\">Emilian Robert Vicol</a>.",
+      "Bei dem Beispielbild handelt es sich um ein lizenzfreies Bild das im Rahmen der Masterarbeit entstanden ist.",
+    ]
+
+    var condition;
+    var randomIndex;
+
+    if (localStorage.getItem("condition") == null) {
+      // Get a random index from the array
+      randomIndex = Math.floor(Math.random() * conditions.length);
+      condition = conditions[randomIndex];
+      localStorage.setItem("condition", condition);
+      localStorage.setItem("random_index", randomIndex)
+    } else {
+      condition = localStorage.getItem("condition");
+      randomIndex = localStorage.getItem("random_index");
+    }
+
+    // Get the random text from the array using the random index
+    const randomText = texts[randomIndex];
+
+    // Display the random text on the page
+    const textElement = document.getElementById("instructions");
+    textElement.innerHTML = randomText;
+
+    const randomImage = images[randomIndex];
+    const altTextForRandomImage = altTextForImage[randomIndex];
+
+    const imageElement = document.getElementById("scenario_image");
+    imageElement.setAttribute("src", randomImage);
+    imageElement.setAttribute("alt", altTextForRandomImage);
+
+    const imageSourceElement = document.getElementById("image_source");
+    imageSourceElement.innerHTML = imageSource[randomIndex];
+
+    var conversation_id = null;
+
+    checkIfInteractionHasBeenCompletedBefore();
+
+    window.addEventListener('chatwoot:on-message', function (e) {
+
+      conversation_object = e.detail.conversation;
+
+      if (conversation_object.assignee_id == 1) {
+
+        var button = document.getElementById("questionnaire_button");
+
+        button.classList.remove("disabled");
+
+      }
+
+      if (conversation_id == null) {
+        if (e.detail.conversation_id != null) {
+          conversation_id = e.detail.conversation_id;
+        }
+      }
+
+    });
+
+    document.addEventListener('custom-bot-response', function (e) {
+
+      if (e.detail.hasOwnProperty("custom")) {
+        
+        const custom = e.detail.custom;
+
+        if (custom.hasOwnProperty("conversation_completed")) {
+          
+          var button = document.getElementById("questionnaire_button");
+
+          button.classList.remove("disabled");
+
+          // console.log("conversation_completed");
+  
+        }
+
+      }
+
+    });
+
+    document.addEventListener('chatwoot-conversation-id', function (e) {
+
+      conversation_id = e.detail.chatwoot_conversation_id;
+
+    });
+
+    function checkIfInteractionHasBeenCompletedBefore() {
+
+      var completed = localStorage.getItem("completed_interaction");
+
+      if (completed == null) {
+        return;
+      }
+
+      var button = document.getElementById("questionnaire_button");
+
+      button.classList.remove("disabled");
+
+      loadParametersIfAvailable();
+
+    }
+
+    function loadParametersIfAvailable() {
+
+      var id = localStorage.getItem("id");
+      if (id != null) {
+        conversation_id = id;
+      }
+
+      var u = localStorage.getItem("uuid");
+      if (u != null) {
+        uuid = u;
+      }
+
+    }
+
+    function attachData() {
+
+      var btn = document.getElementById("questionnaire_button");
+      btn.href += '?id=' + conversation_id;
+      btn.href += '&c=' + condition;
+
+      uuid = crypto.randomUUID();
+      btn.href += '&u=' + uuid;
+
+      localStorage.setItem("id", conversation_id);
+      localStorage.setItem("uuid", uuid);
+
+      localStorage.setItem("completed_interaction", "true")
+
+    }
+
+    function clearLocalStorage() {
+
+      localStorage.removeItem("id");
+      localStorage.removeItem("uuid");
+      localStorage.removeItem("completed_interaction");
+      localStorage.removeItem("condition");
+      localStorage.removeItem("random_index");
+
+    }
+
+    // window.chatwootSettings = { "position": "right", "type": "expanded_bubble", "launcherTitle": "Beschwerde einreichen", "locale": "de" };
+    // (function (d, t) {
+    //   var BASE_URL = "<URL>";
+    //   var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+    //   g.src = BASE_URL + "/packs/js/sdk.js";
+    //   g.defer = true;
+    //   g.async = true;
+    //   s.parentNode.insertBefore(g, s);
+    //   g.onload = function () {
+    //     window.chatwootSDK.run({
+    //       websiteToken: '<TOKEN>',
+    //       baseUrl: BASE_URL
+    //     })
+    //   }
+    // })(document, "script");
+
+  </script>
+
+
+
+</body>
+
+</html>
